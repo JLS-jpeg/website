@@ -1,0 +1,133 @@
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/static/css/stylecentres.css">
+    <title>Centres</title>
+</head>
+<body>
+    <a href="https://www.promeo-formation.fr/" target="_blank"> <img src="/static/img/promeo.png"> </a>
+    <ul class="menu">
+        <li><a href="/" class="actif">Accueil</a></li>
+        <li><a href="centres.jinja" class="actif">Centres</a></li>
+        <li><a href="connectformateurs.jinja" class="actif">Espace formateurs</a></li>
+    </ul>
+    <br><center><h1>Nos centres</h1></center>
+    <br><h2>Sélectionnez le centre qui vous intéresse :</h2>
+    <div class="centres">
+        <select id="centreDropdown" onchange="displayInfo()">
+            <option value="...">...</option>
+            <option value="Amiens">Amiens</option>
+            <option value="Beauvais">Beauvais</option>
+            <option value="Compiegne">Compiègne</option>
+            <option value="Friville">Friville</option>
+            <option value="Saint-Quentin">Saint-Quentin</option>
+            <option value="Senlis">Senlis</option>
+            <option value="Soissons">Soissons</option>
+        </select>
+        <div id="centreInfo">
+            <!-- Les informations sur le centre sélectionné seront affichées ici -->
+        </div>
+    </div>
+    <script>
+    function displayInfo() {
+        var selectedCentre = document.getElementById("centreDropdown").value;
+        var infoDiv = document.getElementById("centreInfo");
+
+        switch(selectedCentre) {
+            case "Amiens":
+                infoDiv.innerHTML = `
+                    <p>PROMEO vous accueille dans son centre de formation situé au cœur de la zone industrielle à Amiens.</p>
+                    <p>PROMEO Amiens forme chaque année, près de 350 jeunes en alternance aux métiers techniques de l’industrie et tertiaires. Ce sont plus de 31 diplômes proposés en BAC PRO, BTS, Licence, Bachelor, Master et Cycle Mastère, permettant aux étudiants de suivre leur parcours de formation en alternance.</p>
+                    <p>Le centre d’Amiens accueille également 4 500 salariés et 440 demandeurs d’emploi chaque année pour développer leurs compétences et/ou obtenir une qualification professionnelle.</p><br>
+                    <p><strong>Coordonnées</strong></p>
+                    <p>Espace industriel Nord 74 rue de Poulainville 80080 Amiens</p>
+                    <p>03 22 54 64 00</p>
+                    <p>Notre centre est accessible aux personnes en situation de handicap.</p><br>
+                    `;
+                break;
+            
+            case "Beauvais":
+                infoDiv.innerHTML = `
+                    <p>PROMEO vous accueille dans son centre de formation à Beauvais, facile d'accès entre l'aéroport de Beauvais-Paris et le centre-ville.  </p>
+                    <p>PROMEO Beauvais forme chaque année près de 900 jeunes en alternance aux métiers techniques de l'industrie et dans les métiers tertiaires. Ce sont plus de 31 diplômes proposés en BAC PRO, BTS, Licence, Bachelor, Master, Cycle Mastère et Ingénieurs CNAM en partenariat avec l'ITII Picardie permettant aux étudiants de suivre leur parcours de formation.</p>
+                    <p>Le centre de Beauvais accueille également près de 3 000 salariés et 250 demandeurs d’emploi chaque année pour développer leurs compétences et/ou obtenir une qualification professionnelle.</p><br>
+                    <p><strong>Coordonnées</strong></p>
+                    <p>6 avenue Paul Henri Spaak 60000 Beauvais</p>
+                    <p>03 44 06 15 20</p>
+                    <p>Notre centre est accessible aux personnes en situation de handicap.</p><br>               
+-                `;
+                break;
+                
+            case "Compiegne":
+                infoDiv.innerHTML = `
+                    <p>PROMEO vous accueille dans son centre de formation de Compiègne.</p>
+                    <p>PROMEO Compiègne forme chaque année, près de 420 jeunes en alternance aux métiers techniques de l’industrie et tertiaires. Ce sont plus de 31 diplômes proposés en BAC PRO, BTS, Licence, Bachelor, Master et Cycle Mastère, permettant aux étudiants de suivre leur parcours de formation en alternance.</p>
+                    <p>Le centre de Compiègne accueille également 3 200 salariés et 220 demandeurs d’emploi chaque année pour développer leurs compétences et/ ou obtenir une qualification professionnelle.</p><br>
+                    <p><strong>Coordonnées</strong></p>
+                    <p>87avenue de la Mare Gessart 60280 Venette</p>
+                    <p>03 44 20 70 10</p>
+                    <p>Notre centre est accessible aux personnes en situation de handicap.</p><br>
+                `;
+                break;
+
+            case "Friville":
+                infoDiv.innerHTML = `
+                    <p>PROMEO vous accueille dans son centre de formation à Friville, situé au cœur du bassin industriel spécialisé dans le décolletage, dans la région du Vimeu et à proximité de la vallée de la Bresles, à 25 km d’Abbeville.</p>
+                    <p>PROMEO Friville forme chaque année, près de 50 jeunes en alternance aux métiers techniques de l’industrie et tertiaires. Ce sont plus de 3 diplômes proposés en BTS permettant aux étudiants de suivre leur parcours de formation en alternance.</p>
+                    <p>Le centre de Friville accueille également 1 200 salariés et 70 demandeurs d’emploi chaque année pour développer leurs compétences et/ ou obtenir une qualification professionnelle.</p><br>
+                    <p><strong>Coordonnées</strong></p>
+                    <p>10 Rue Emile Zola 80130 Friville-Escarbotin</p>
+                    <p>03 22 60 20 20</p>
+                    <p>Notre centre est accessible aux personnes en situation de handicap.</p><br>
+                `;
+                break;
+
+            case "Saint-Quentin":
+                infoDiv.innerHTML = `
+                    <p>PROMEO vous accueille dans son centre de formation à Saint-Quentin, au plus près des entreprises locales et dans le 1er bassin de l’emploi économique de l’Aisne. </p>
+                    <p>PROMEO Saint-Quentin forme chaque année, près de 350 jeunes en alternance aux métiers techniques de l’industrie et tertiaires. Ce sont plus de 31 diplômes proposés en BAC PRO, BTS, Licence, Bachelor, Master et Cycle Mastère, permettant aux étudiants de suivre leur parcours de formation en alternance.</p>
+                    <p>Le centre accueille également 3 200 salariés et 220 demandeurs d’emploi chaque année pour développer leurs compétences et/ ou obtenir une qualification professionnelle. </p> <br>
+                    <p><strong>Coordonnées</strong></p>
+                    <p>ZA La Vallée 114 rue de la Chaussée Romaine 02100 Saint-Quentin</p>
+                    <p>03 23 06 28 88</p>
+                    <p>Notre centre est accessible aux personnes en situation de handicap.</p><br>
+                `;
+                break;
+
+            case "Senlis":
+                infoDiv.innerHTML = `
+                <p>PROMEO vous accueille dans son centre de formation situé près du centre historique de Senlis, à environ 40 kilomètres au nord de Paris.  </p>
+                <p>PROMEO Senlis forme chaque année, près de 900 jeunes en alternance aux métiers techniques de l’industrie et tertiaires. Ce sont plus de 31 diplômes proposés en BAC PRO, BTS, Licence, Bachelor, Master et Cycle Mastère, permettant aux étudiants de suivre leur parcours de formation en alternance.</p>
+                <p>Le centre de Senlis accueille également 4 500 salariés et 150 demandeurs d’emploi chaque année pour développer leurs compétences et/ou obtenir une qualification professionnelle.</p><br>
+                <p><strong>Coordonnées</strong></p>
+                <p>1 avenue Eugène Gazeau 60300 Senlis</p>
+                <p>03 44 63 81 63</p>
+                <p>Notre centre est accessible aux personnes en situation de handicap.</p><br>
+                `;
+                break;
+
+            case "Soissons":
+                infoDiv.innerHTML = `
+                <p>PROMEO Soissons vous accueille dans son centre de formation, situé sur la commune de Billy-sur-Aisne et proche de la zone industrielle.</p>
+                <p>PROMEO Soissons forme chaque année, près de 350 jeunes en alternance aux métiers techniques de l’industrie et tertiaires. Ce sont plus de 31 diplômes proposés en BAC PRO, BTS, Licence, Bachelor, Master et Cycle Mastère, permettant aux étudiants de suivre leur parcours de formation en alternance.</p>
+                <p>Le centre de Soissons accueille également près de 1 700 salariés et 150 demandeurs d’emploi chaque année pour développer leurs compétences et/ ou obtenir une qualification professionnelle.</p><br>
+                <p><strong>Coordonnées</strong></p>
+                <p>161 rue des Grands Prés 02200 Billy sur Aisne</p>
+                <p>03 23 75 65 75</p>
+                <p>Notre centre est accessible aux personnes en situation de handicap.</p><br>
+                `;
+                break;
+
+            default:
+
+                infoDiv.innerHTML = "";
+        }
+    }
+    </script>
+
+    <footer>
+        <center><p class="copyright">2024 © Copyright POLIZSUK & VANDAMME</p></center>
+    </footer>
+</body>
+</html>
+

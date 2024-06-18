@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendrier des rendez-vous</title>
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.0/main.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.0/locales/fr.js" rel="stylesheet"> <!-- Charger la localisation pour le français -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        #calendar {
+            max-width: 800px;
+            margin: 40px auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calendrier des rendez-vous</h1>
+    <div id="calendar"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.0/main.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.0/locales/fr.js"></script> <!-- Charger la localisation pour le français -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var calendarEl = document.getElementById('calendar');
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                locale: 'fr', // Définir la langue du calendrier en français
+                initialView: 'timeGridWeek', // Afficher le calendrier par semaine et par heure
+                headerToolbar: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'dayGridMonth,timeGridWeek,timeGridDay'
+                },
+                buttonText: {
+                    today: 'Aujourd\'hui',
+                    month: 'Mois',
+                    week: 'Semaine',
+                    day: 'Jour'
+                },
+                editable: true, // Activer l'édition des événements
+                eventResizableFromStart: true, // Permettre le redimensionnement de l'événement à partir de son début
+                eventResize: function(info) {
+                    var eventData = {
+                        id: info.event.id,
+                        start: info.event.start,
+                        end: info.event.end
+                    };
+                    console.log('Event resized:', eventData);
+                },
+                events: [
+                    // Les rendez-vous seront ajoutés ici dynamiquement depuis le servlet Java
+                    { id: '1', title: 'Rendez-vous 1', start: '2024-05-05T10:00:00', end: '2024-05-05T12:00:00' },
+                    { id: '2', title: 'Rendez-vous 2', start: '2024-05-15T14:00:00', end: '2024-05-15T16:00:00' }
+                ]
+            });
+            calendar.render();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/static/css/styleaccueil.css">
+    <title>Accueil</title>
+</head>
+<body>
+    <a href="https://www.promeo-formation.fr/" target="_blank"> <img src="/static/img/promeo.png"> </a>
+    <ul class="menu">
+        <li><a href="/" class="actif">Accueil</a></li>
+        <li><a href="centres.jinja" class="actif">Centres</a></li>
+        <li><a href="connectformateurs.jinja" class="actif">Espace formateurs</a></li>
+    </ul>
+    <br><center><h1>Bienvenue sur la plateforme des entretiens Tuteurs / Responsables de formations</h1></center>
+    <br><h2><center>Connectez-vous pour réserver votre créneau </h2>
+    
+    <div id="container">
+    <form action="/loginapprenties" method="post">
+    <label for="pseudo">Identifiant</label><br>
+    <input type="email" id="mail" name="mail" placeholder="..." required><br><br>
+    <label for="password">Mot de passe</label><br>
+    <input type="password" id="MDP" name="MDP" placeholder="..." required><br><br>
+    <input type="submit" value="Se connecter">
+    </form>
+    </div>
+
+    <footer>
+        <center><p class="copyright">2024 © Copyright POLIZSUK & VANDAMME</p></center>
+    </footer>
+</body>
+</html>
